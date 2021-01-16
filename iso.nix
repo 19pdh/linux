@@ -89,4 +89,15 @@ in
     ];
   };
 
+  boot.loader.grub.splashImage = ./bg.png;
+
+  isoImage.grubTheme = null;
+  isoImage.splashImage = ./bg.png;
+  isoImage.efiSplashImage = ./bg.png;
+
+  boot.plymouth = {
+    enable = true;
+    logo = ./logo.png;
+  };
+
 }
