@@ -8,7 +8,10 @@ let
   # };
 
   wallpaperImage = pkgs.fetchurl {
-    url = "https://pics.niedzwiedzinski.cyou/oboz2020/photos/_MG_1480.jpg";
+    urls = [
+      "https://pics.niedzwiedzinski.cyou/oboz2020/photos/_MG_1480.jpg"
+      "https://web.archive.org/web/20210116180606if_/https://pics.niedzwiedzinski.cyou/oboz2020/photos/_MG_1480.jpg"
+    ];
     sha256 = "1jdrgf8jd2aai5ny1r0d6zw02mk3xkdh92j1ywxbd3ysbf0c35qf";
   };
 
