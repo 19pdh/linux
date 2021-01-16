@@ -97,6 +97,8 @@ in
   isoImage.grubTheme = null;
   isoImage.splashImage = ./bg.png;
   isoImage.efiSplashImage = ./bg.png;
+  isoImage.isoBaseName = "puszczanix";
+  isoImage.appendToMenuLabel = "puszczanix live";
 
   boot.plymouth = {
     enable = true;
