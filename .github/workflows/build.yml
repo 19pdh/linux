@@ -1,7 +1,8 @@
 name: "Build"
+
 on:
-  push:
-    tags
+  release:
+    types: [published,prereleased]
 
 jobs:
   release:
