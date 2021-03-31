@@ -15,10 +15,11 @@ jobs:
         nix_path: nixpkgs=channel:nixos-unstable
     - run: ./build.sh
     - run: cp ./result/iso/*.iso img.iso
+    - run: zip img.zip img.iso
     - uses: actions/upload-artifact@v2
       with:
         name: iso
-        path: img.iso
+        path: img.zip
     # - uses: fnkr/github-action-ghr@v1
     #   env:
     #     GHR_PATH: img.iso
