@@ -1,8 +1,9 @@
 name: "Build"
 
 on:
-  release:
-    types: [published,prereleased]
+  push:
+  # release:
+  #   types: [published,prereleased]
 
 jobs:
   release:
@@ -13,7 +14,12 @@ jobs:
       with:
         nix_path: nixpkgs=channel:nixos-unstable
     - run: ./build.sh
-    - uses: fnkr/github-action-ghr@v1
-      env:
-        GHR_PATH: result/iso
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - run: cp ./result/iso/*.iso img.iso
+    - uses: actions/upload-artifact@v2
+      with:
+        name: iso
+        path: img.iso
+    # - uses: fnkr/github-action-ghr@v1
+    #   env:
+    #     GHR_PATH: img.iso
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
